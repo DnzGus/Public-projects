@@ -71,5 +71,5 @@ button.addEventListener('click', () => {
             label_c.innerText = "";
             label_d.innerText = "";
         }
-    }, 1500);
+    }, 0500);
 });
