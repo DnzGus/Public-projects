@@ -39,16 +39,17 @@ const label_c = document.getElementById("L_c");
 const label_d = document.getElementById("L_d");
 const button = document.getElementById("botao");
 const radial = document.getElementsByName("answer");
-const placar = document.getElementById("placar");
+const score = document.getElementById("score");
 
 
-let quizcount = 0;
+let quizCount = 0;
+let scoreCount = 0
 
 loadQuiz();
 
 function loadQuiz(){
 
-    const quizdata = quiz[quizcount];
+    const quizdata = quiz[quizCount];
     
     question.innerText = quizdata.question;
     label_a.innerText = quizdata.a;
@@ -56,12 +57,29 @@ function loadQuiz(){
     label_c.innerText = quizdata.c;
     label_d.innerText = quizdata.d;
 
-    
+    const radioButtons = document.querySelectorAll('input[type=radio][name=answer]')
+
+    let selectedAnswer;
+    for(const radioButton of radioButtons){
+        if (radioButton.cheked){
+            selectedAnswer = radioButton.value;
+            if(selectedAnswer === quiz[quizCount].correct){
+                scoreCount++;
+                score.innerText = `score = ${scoreCount} of 4`;
+        }
+        break;
+        }
+    }
+    if(selectedAnswer === quiz[quizCount].correct){
+        score.innerHTML = `score = ${scoreCount} of 4`;
+        scoreCount++;
+    }
+        
 };
 button.addEventListener('click', () => {
     setTimeout(() => {
-        if(quizcount < quiz.length){
-            quizcount ++;
+        if(quizCount < quiz.length){
+            quizCount ++;
             loadQuiz()
         }
         else{

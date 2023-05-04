@@ -54,7 +54,7 @@ ul{
 label{
     cursor: pointer;
 }
-#placar{
+#score{
     margin: 0;
     margin-top: 1.5rem;
     display: flex;
