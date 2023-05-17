@@ -1,0 +1,78 @@
+*{box-sizing: border-box;
+
+}
+body{
+    background: rgb(0,105,62);
+    background: radial-gradient(
+        circle, rgba(0,105,62,1) 0%,
+        rgba(1,135,73,1) 50%,
+        rgba(0,105,62,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vh;
+    margin: 0;
+    overflow: hidden;
+    flex-direction: column;
+    font-family: 'Segoe UI';
+}
+.area{
+    background-color: rgb(28, 29, 29);
+    width: 600px;
+    max-width: 100%;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 40px;
+}
+.resp{
+    padding: 6rem;
+}
+.but{
+    background-color: #5C5E5E;
+    color: rgb(224, 223, 220);
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+.but:active{
+    opacity: 0.6;
+}
+h1{
+    color: rgb(224, 223, 220);
+    letter-spacing: 0.1em;
+    text-shadow: rgb(255, 255, 255) 0px -1px 0px, rgb(46, 46, 46) 0px 1px 0px, rgb(44, 44, 44) 0px 2px 0px, rgb(42, 42, 42) 0px 3px 0px, rgb(40, 40, 40) 0px 4px 0px, rgb(38, 38, 38) 0px 5px 0px, rgb(36, 36, 36) 0px 6px 0px, rgb(34, 34, 34) 0px 7px 0px, rgb(32, 32, 32) 0px 8px 0px, rgb(30, 30, 30) 0px 9px 0px, rgb(28, 28, 28) 0px 10px 0px, rgb(26, 26, 26) 0px 11px 0px, rgb(24, 24, 24) 0px 12px 0px, rgb(22, 22, 22) 0px 13px 0px, rgb(20, 20, 20) 0px 14px 0px, rgb(18, 18, 18) 0px 15px 0px, rgba(0, 0, 0, 0.9) 0px 22px 30px;
+    --darkreader-inline-color: #d3cfca;
+    --darkreader-inline-bgimage: initial;
+    --darkreader-inline-bgcolor: #44525f;
+    margin-bottom: 35rem;
+    position: absolute;
+    font-size: 3rem;
+}
+#frase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 2rem;
+    color: rgb(224, 223, 220);
+    font-size: 2rem;
+}
+.box{
+    background-color: #5C5E5E;
+    color: rgb(224, 223, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: hidden;
+    border-radius: 4px;
+    min-height: 2rem;
+    margin:auto;
+    outline: none;
+}
+::placeholder{
+    color: rgb(224, 223, 220);
+}
