@@ -49,9 +49,9 @@ const words = [
     correct : "Corpo",}
 ]
 
-document.querySelector("#but")
+const green = "#007168";
+const red = "#cc0000";
 let frase = document.getElementById("frase")
-let botaoo = document.getElementById("but")
 let wordcount = 0
 
 loadpage()
@@ -59,19 +59,24 @@ loadpage()
 function loadpage(){
     
     const palavra = words[wordcount];
-    frase.innerHTML = palavra.word
+    frase.innerHTML = palavra.word;
+    frase.removeAttribute("style")
 }
 
     function botao() {
         
+
         const resposta = document.querySelector("#resp").value;
         const correto = words[wordcount]
         
         if(resposta == correto.correct){
             wordcount++
-            loadpage()
+            frase.style.color = green
+            frase.innerHTML = "Correct!"
+            setTimeout(loadpage, 1500)
         }else{
             setTimeout(loadpage, 1500)
-            frase.innerHTML = "Tente novamente!"
+            frase.style.color = red
+            frase.innerHTML = "Try Again!"
         }
     }
