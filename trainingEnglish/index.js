@@ -67,16 +67,16 @@ function loadpage(){
         
 
         const resposta = document.querySelector("#resp").value.toLowerCase();
-        const correto = words[wordcount]
+        const correto = words[wordcount].correct
         
-        if(resposta.match(correto.correct)){
+        if(resposta.match(correto)){
             wordcount++
-            frase.style.color = green
-            frase.innerHTML = "Correct!"
+            frase.style.color = green;
+            frase.innerHTML = correto + "!";
             setTimeout(loadpage, 1500)
         }else{
             setTimeout(loadpage, 1500)
-            frase.style.color = red
-            frase.innerHTML = "Try Again!"
+            frase.style.color = red;
+            frase.innerHTML = "Try Again!";
         }
     }
