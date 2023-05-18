@@ -66,10 +66,10 @@ function loadpage(){
     function botao() {
         
 
-        const resposta = document.querySelector("#resp").value;
+        const resposta = document.querySelector("#resp").value.toLowerCase();
         const correto = words[wordcount]
         
-        if(resposta == correto.correct){
+        if(resposta.match(correto.correct)){
             wordcount++
             frase.style.color = green
             frase.innerHTML = "Correct!"
