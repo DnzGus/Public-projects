@@ -49,8 +49,6 @@ const words = [
     correct : "Corpo",}
 ]
 
-const green = "#007168";
-const red = "#cc0000";
 let frase = document.getElementById("frase")
 let wordcount = 0
 
@@ -63,20 +61,40 @@ function loadpage(){
     frase.removeAttribute("style")
 }
 
-    function botao() {
-        
+function botao() {
+    
+    const resposta = document.querySelector("#resp").value.toLowerCase();
+    const correto = words[wordcount].correct
 
-        const resposta = document.querySelector("#resp").value.toLowerCase();
-        const correto = words[wordcount].correct
-        
-        if(resposta.match(correto)){
-            wordcount++
-            frase.style.color = green;
-            frase.innerHTML = correto + "!";
-            setTimeout(loadpage, 1500)
-        }else{
-            setTimeout(loadpage, 1500)
-            frase.style.color = red;
-            frase.innerHTML = "Try Again!";
-        }
+    if(resposta.match(correto)){
+        answer(resposta, correto)
+        wordcount++
+        setTimeout(loadpage, 1500)
+        clearbox()
+    }else{
+        answer(resposta, correto)
+        setTimeout(loadpage, 1500)
+        clearbox()
     }
+}
+
+
+function answer(resposta, correto){
+    
+    const green = "#007168";
+    const red = "#cc0000";
+    
+    if(resposta.match(correto)){
+        frase.style.color = green;
+        frase.innerHTML = correto +"!"
+    }
+    else{
+        frase.style.color = red;
+        frase.innerHTML = "Try Again!";
+    }
+}
+
+function clearbox(){
+    
+    document.getElementById("resp").value = ""
+}
