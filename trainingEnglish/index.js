@@ -32,48 +32,50 @@ const words = [
     p16={word: "table",
     correct : "mesa"},
     p17={word: "Afternoon",
-    correct : "Tarde"},
+    correct : "tarde"},
     p18={word: "Age",
-    correct : "Idade"},
+    correct : "idade"},
     p19={word: "Beauty",
-    correct : "Beleza"},
+    correct : "beleza"},
     p20={word: "Bed",
-    correct : "Cama"},
+    correct : "cama"},
     p21={word: "Beginning",
-    correct : "Começo"},
+    correct : "começo"},
     p22={word: "Bicycle",
-    correct : "Bicicleta"},
+    correct : "bicicleta"},
     p23={word: "Birthday",
-    correct : "Aniversário"},
+    correct : "aniversário"},
     p24={word: "Body",
-    correct : "Corpo",}
+    correct : "corpo",}
 ]
 
+let button = document.getElementById("but")
 let frase = document.getElementById("frase")
-let wordcount = 0
+let wordcount = []
+let randomnum = Math.floor(Math.random()* words.length)
 
 loadpage()
 
 function loadpage(){
-    
-    const palavra = words[wordcount];
-    frase.innerHTML = palavra.word;
+    let palavra = words[randomnum].word;
+    frase.innerHTML = palavra;
     frase.removeAttribute("style")
+    console.log(wordcount)
 }
 
 function botao() {
-    
     const resposta = document.querySelector("#resp").value.toLowerCase();
-    const correto = words[wordcount].correct
-
+    const correto = words[randomnum].correct
+    
     if(resposta.match(correto)){
+        wordcount.push(randomnum)
+        randomnum = Math.floor(Math.random()* words.length)
         answer(resposta, correto)
-        wordcount++
         setTimeout(loadpage, 1500)
         clearbox()
     }else{
         answer(resposta, correto)
-        setTimeout(loadpage, 1500)
+        setTimeout(tryagain, 1500)
         clearbox()
     }
 }
@@ -97,4 +99,10 @@ function answer(resposta, correto){
 function clearbox(){
     
     document.getElementById("resp").value = ""
+}
+
+function tryagain(){
+    palavra = words[randomnum].word;
+    frase.innerHTML = palavra;
+    frase.removeAttribute("style")
 }
