@@ -24,6 +24,8 @@ body{
     border-radius: 50px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 40px;
+    position: absolute;
+    margin: auto;
 }
 .resp{
     padding: 6rem;
@@ -47,7 +49,7 @@ h1{
     --darkreader-inline-color: #d3cfca;
     --darkreader-inline-bgimage: initial;
     --darkreader-inline-bgcolor: #44525f;
-    margin-bottom: 35rem;
+    margin-bottom: 36rem;
     position: absolute;
     font-size: 3rem;
 }
@@ -75,4 +77,24 @@ h1{
 }
 ::placeholder{
     color: rgb(224, 223, 220);
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    max-width: 100%;
+    bottom: 2rem;
+    color: rgb(28, 29, 29);
+    text-decoration: none;
+    text-decoration-color: rgb(28, 29, 29);
+}
+a:link{
+    color: rgb(28, 29, 29);
+    text-decoration: none;
+    text-decoration-color: rgb(28, 29, 29);
+}
+a:visited{
+    color: rgb(28, 29, 29);
+    text-decoration: none;
+    text-decoration-color: rgb(28, 29, 29);
 }
