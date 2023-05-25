@@ -49,15 +49,22 @@ const words = [
     correct : "corpo",}
 ]
 
-let button = document.getElementById("but")
 let frase = document.getElementById("frase")
 let wordcount = []
-let randomnum = Math.floor(Math.random()* words.length)
+let randomnum
+let palavra
 
 loadpage()
 
+
 function loadpage(){
-    let palavra = words[randomnum].word;
+    randomnum = rand()
+    if(wordcount.includes(randomnum)){
+        while(wordcount.includes(randomnum)){
+            randomnum = rand()
+        }
+    }
+    palavra = words[randomnum].word;
     frase.innerHTML = palavra;
     frase.removeAttribute("style")
     console.log(wordcount)
@@ -69,7 +76,6 @@ function botao() {
     
     if(resposta.match(correto)){
         wordcount.push(randomnum)
-        randomnum = Math.floor(Math.random()* words.length)
         answer(resposta, correto)
         setTimeout(loadpage, 1500)
         clearbox()
@@ -105,4 +111,8 @@ function tryagain(){
     palavra = words[randomnum].word;
     frase.innerHTML = palavra;
     frase.removeAttribute("style")
+}
+
+function rand(){
+    return  Math.floor(Math.random()* words.length)
 }
