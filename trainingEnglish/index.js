@@ -49,6 +49,7 @@ const words = [
     correct : "corpo",}
 ]
 
+let box = document.getElementsByClassName("box")
 let frase = document.getElementById("frase")
 let wordcount = []
 let randomnum
@@ -59,29 +60,33 @@ loadpage()
 
 function loadpage(){
     randomnum = rand()
-    if(wordcount.includes(randomnum)){
+    if(wordcount.includes(randomnum) && wordcount.length <24){
         while(wordcount.includes(randomnum)){
             randomnum = rand()
         }
     }
     palavra = words[randomnum].word;
-    frase.innerHTML = palavra;
+    if(wordcount.length >= 24){
+        palavra = "Parabéns, você concluiu todas as frases"
+    }
     frase.removeAttribute("style")
+    frase.innerHTML = palavra;
     console.log(wordcount)
 }
 
 function botao() {
     const resposta = document.querySelector("#resp").value.toLowerCase();
     const correto = words[randomnum].correct
-    
+
     if(resposta.match(correto)){
         wordcount.push(randomnum)
         answer(resposta, correto)
-        setTimeout(loadpage, 1500)
+        setTimeout(loadpage, 1200)
         clearbox()
-    }else{
+    }
+    else{
         answer(resposta, correto)
-        setTimeout(tryagain, 1500)
+        setTimeout(tryagain, 1200)
         clearbox()
     }
 }
