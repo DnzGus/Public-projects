@@ -49,11 +49,12 @@ const words = [
     correct : "corpo",}
 ]
 
-let box = document.getElementsByClassName("box")
-let frase = document.getElementById("frase")
+let button_html = document.getElementById("button")
+let word_answer = document.getElementById("word_answer")
+let word = document.getElementById("word")
 let wordcount = []
 let randomnum
-let palavra
+let words_word
 
 loadpage()
 
@@ -65,59 +66,69 @@ function loadpage(){
             randomnum = rand()
         }
     }
-    palavra = words[randomnum].word;
+    words_word = words[randomnum].word;
     if(wordcount.length >= 24){
-        palavra = "Parabéns, você concluiu todas as frases"
+        finish()
     }
-    frase.removeAttribute("style")
-    frase.innerHTML = palavra;
+    word.removeAttribute("style")
+    word.innerHTML = words_word;
     console.log(wordcount)
 }
 
-function botao() {
-    const resposta = document.querySelector("#resp").value.toLowerCase();
-    const correto = words[randomnum].correct
+word_answer.addEventListener("keypress",function(event){
+    if(event.key ==="Enter"){
+        button()
+    }
+})
+function button() {
+    const answer = document.querySelector("#word_answer").value.toLowerCase();
+    const correct = words[randomnum].correct
 
-    if(resposta.match(correto)){
+    if(answer.match(correct)){
         wordcount.push(randomnum)
-        answer(resposta, correto)
+        CorrectWrong(answer, correct)
         setTimeout(loadpage, 1200)
         clearbox()
     }
     else{
-        answer(resposta, correto)
+        CorrectWrong(answer, correct)
         setTimeout(tryagain, 1200)
         clearbox()
     }
 }
 
 
-function answer(resposta, correto){
+function CorrectWrong(answer, correct){
     
     const green = "#007168";
     const red = "#cc0000";
     
-    if(resposta.match(correto)){
-        frase.style.color = green;
-        frase.innerHTML = correto +"!"
+    if(answer.match(correct)){
+        word.style.color = green;
+        word.innerHTML = correct +"!"
     }
     else{
-        frase.style.color = red;
-        frase.innerHTML = "Try Again!";
+        word.style.color = red;
+        word.innerHTML = "Try Again!";
     }
 }
 
 function clearbox(){
-    
-    document.getElementById("resp").value = ""
+    document.getElementById("word_answer").value = ""
 }
 
 function tryagain(){
-    palavra = words[randomnum].word;
-    frase.innerHTML = palavra;
-    frase.removeAttribute("style")
+    words_word = words[randomnum].word;
+    word.innerHTML = words_word;
+    word.removeAttribute("style")
 }
 
 function rand(){
     return  Math.floor(Math.random()* words.length)
+}
+
+function finish(){
+    words_word = "Parabéns, você concluiu todas as frases"
+    word_answer.remove();
+    button_html.remove();
 }
