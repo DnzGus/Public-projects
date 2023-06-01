@@ -50,12 +50,18 @@ const words = [
     correct : "corpo",}
 ]
 
+let pointsCorrect = document.getElementById("pointsC")
+let pointsWrong = document.getElementById("pointsW")
 let button_html = document.getElementById("button")
 let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
 let wordcount = []
 let randomnum
 let words_word
+let correctP = 0
+let wrongsP = 0
+
+
 
 loadpage()
 
@@ -67,12 +73,14 @@ function loadpage(){
             randomnum = rand()
         }
     }
-    words_word = words[randomnum].word;
+    words_word = words[randomnum].word.toUpperCase();
     if(wordcount.length >= 24){
         finish()
     }
     word.removeAttribute("style")
     word.innerHTML = words_word;
+    pointsCorrect.innerHTML = correctP
+    pointsWrong.innerHTML = wrongsP
     console.log(wordcount)
 }
 
@@ -84,7 +92,6 @@ word_answer.addEventListener("keypress",function(event){
 function button() {
     const answer = document.querySelector("#word_answer").value.toLowerCase();
     const correct = words[randomnum].correct
-
     if(answer.match(correct)){
         wordcount.push(randomnum)
         CorrectWrong(answer, correct)
@@ -106,11 +113,15 @@ function CorrectWrong(answer, correct){
     
     if(answer.match(correct)){
         word.style.color = green;
-        word.innerHTML = correct +"!"
+        word.innerHTML = correct.toUpperCase() +"!"
+        correctP += 1
+        pointsCorrect.innerHTML = correctP
     }
     else{
         word.style.color = red;
-        word.innerHTML = "Try Again!";
+        word.innerHTML = "Try Again!".toUpperCase();
+        wrongsP += 1
+        pointsWrong.innerHTML = wrongsP
     }
 }
 
@@ -129,7 +140,7 @@ function rand(){
 }
 
 function finish(){
-    words_word = "Parabéns, você concluiu todas as frases"
+    words_word = `Parabéns, você concluiu todas as frases, com um total de ${correctP+wrongsP} tentativas.`
     word_answer.remove();
     button_html.remove();
 }

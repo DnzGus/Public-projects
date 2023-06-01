@@ -87,6 +87,7 @@ h1{
     color: rgb(28, 29, 29);
     text-decoration: none;
     text-decoration-color: rgb(28, 29, 29);
+    font-weight: bold;
 }
 a:link{
     color: rgb(28, 29, 29);
@@ -97,4 +98,24 @@ a:visited{
     color: rgb(28, 29, 29);
     text-decoration: none;
     text-decoration-color: rgb(28, 29, 29);
+}
+.score{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+}
+.corrects{
+    margin-right: 30rem;
+    margin-bottom: 20rem;
+    color: rgb(28, 29, 29);
+}
+.wrongs{
+    margin-left: 30rem;
+    margin-bottom: 20rem;
+    color: rgb(28, 29, 29);
 }
