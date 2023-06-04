@@ -93,14 +93,9 @@ function button() {
     }
     else{
             CorrectWrong(answer, correct)
+            life.innerHTML = lifes;
             setTimeout(tryagain, 1200)
             clearbox()
-            life.innerHTML = lifes
-    }
-    if(lifes == 0){
-    lifes = 5
-    wordcount = []
-    loadpage()
     }
 }
 
@@ -114,6 +109,12 @@ function CorrectWrong(answer, correct){
         word.style.color = green;
         word.innerHTML = correct.toUpperCase() +"!"
     }
+    else if(lifes <= 1){
+        word.style.color = red
+        word.innerHTML = "Game Over!"
+        lifes = 5
+        wordcount = []
+        }
     else{
         word.style.color = red;
         word.innerHTML = "Try Again!".toUpperCase();
@@ -126,8 +127,9 @@ function clearbox(){
 }
 
 function tryagain(){
-    words_word = words[randomnum].word;
+    words_word = words[randomnum].word.toUpperCase();
     word.innerHTML = words_word;
+    life.innerHTML = lifes;
     word.removeAttribute("style")
 }
 
