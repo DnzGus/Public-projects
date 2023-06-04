@@ -99,28 +99,9 @@ a:visited{
     text-decoration: none;
     text-decoration-color: rgb(28, 29, 29);
 }
-.score{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    font-weight: bold;
-    text-align: center;
-    padding: 0;
-}
-.corrects{
-    margin-right: 30rem;
-    margin-bottom: 20rem;
-    color: rgb(224, 223, 220);
-    background-color: rgb(28, 29, 29);
-    width: 100px;
-    max-width: 100%;
-    border-radius: 25px;
-    border: solid #5C5E5E 2px;
-}
 .wrongs{
-    margin-left: 30rem;
+    text-align: center;
+    margin-left: 60rem;
     margin-bottom: 20rem;
     color: rgb(224, 223, 220);
     background-color: rgb(28, 29, 29);

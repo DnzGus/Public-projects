@@ -1,4 +1,3 @@
-//to do: put a scoreboard
 const words = [
     p1={word: "Book",
     correct : "livro"},
@@ -50,21 +49,16 @@ const words = [
     correct : "corpo",}
 ]
 
-let pointsCorrect = document.getElementById("pointsC")
-let pointsWrong = document.getElementById("pointsW")
+let life = document.getElementById("life")
 let button_html = document.getElementById("button")
 let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
 let wordcount = []
 let randomnum
 let words_word
-let correctP = 0
-let wrongsP = 0
-
-
+let lifes = 5
 
 loadpage()
-
 
 function loadpage(){
     randomnum = rand()
@@ -79,8 +73,7 @@ function loadpage(){
     }
     word.removeAttribute("style")
     word.innerHTML = words_word;
-    pointsCorrect.innerHTML = correctP
-    pointsWrong.innerHTML = wrongsP
+    life.innerHTML = lifes
     console.log(wordcount)
 }
 
@@ -99,9 +92,15 @@ function button() {
         clearbox()
     }
     else{
-        CorrectWrong(answer, correct)
-        setTimeout(tryagain, 1200)
-        clearbox()
+            CorrectWrong(answer, correct)
+            setTimeout(tryagain, 1200)
+            clearbox()
+            life.innerHTML = lifes
+    }
+    if(lifes == 0){
+    lifes = 5
+    wordcount = []
+    loadpage()
     }
 }
 
@@ -114,14 +113,11 @@ function CorrectWrong(answer, correct){
     if(answer.match(correct)){
         word.style.color = green;
         word.innerHTML = correct.toUpperCase() +"!"
-        correctP += 1
-        pointsCorrect.innerHTML = correctP
     }
     else{
         word.style.color = red;
         word.innerHTML = "Try Again!".toUpperCase();
-        wrongsP += 1
-        pointsWrong.innerHTML = wrongsP
+        lifes -= 1
     }
 }
 
@@ -140,7 +136,7 @@ function rand(){
 }
 
 function finish(){
-    words_word = `Parabéns, você concluiu todas as frases, com um total de ${correctP+wrongsP} tentativas.`
+    words_word = `Parabéns, você concluiu todas as frases.`
     word_answer.remove();
     button_html.remove();
 }
