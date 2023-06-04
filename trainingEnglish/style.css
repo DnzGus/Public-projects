@@ -82,6 +82,8 @@ h1{
     display: flex;
     flex-direction: row;
     position: absolute;
+    width: 10rem;
+    justify-content: space-evenly;
     max-width: 100%;
     bottom: 2rem;
     color: rgb(28, 29, 29);
