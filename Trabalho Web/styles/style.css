@@ -1,0 +1,14 @@
+
+.carousel > .carousel-inner > .carousel-item > img{
+    height:54vh;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color: #332D2D;
+}
+#type{
+    font-weight: bold;
+}
+#mid-card{
+    margin-left: 10px;
+    margin-right: 10px;
+}
