@@ -67,10 +67,10 @@ function loadpage(){
             randomnum = rand()
         }
     }
-    words_word = words[randomnum].word.toUpperCase();
     if(wordcount.length >= 24){
         finish()
     }
+    words_word = words[randomnum].word.toUpperCase();
     word.removeAttribute("style")
     word.innerHTML = words_word;
     life.innerHTML = lifes
@@ -111,7 +111,7 @@ function CorrectWrong(answer, correct){
     }
     else if(lifes <= 1){
         word.style.color = red
-        word.innerHTML = "Game Over!"
+        word.innerHTML = "Game Over!".toUpperCase()
         lifes = 5
         wordcount = []
         }
