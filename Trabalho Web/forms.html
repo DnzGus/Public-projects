@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Abuso-sexual</title>
-    <link rel="stylesheet" href="scss/main.css"/>
     <link rel="stylesheet" href="scss/main.scss"/>
+    <link rel="stylesheet" href="scss/main.css"/>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -28,11 +28,27 @@
             <a class="nav-link" href="abuso.html">Abuso sexual infantil</a>
             <a class="nav-link" href="negligencia.html">Negligência infantil | abandono</a>
             <a class="nav-link" href="psicologica.html">Violência psicológica | emocional</a>
-            <a class="nav-link active" aria-current="page" href="#">Disabled</a>
+            <a class="nav-link active" aria-current="page" href="#">Faça uma denúncia</a>
           </div>
         </div>
       </div>
     </nav>
+    <div class="container">
+    <form
+    action="https://formspree.io/f/xqkovkne"
+    method="POST"
+    >
+      <div class="mt-5 col-6">
+        <label for="exampleFormControlInput1" class="form-label white">Email</label>
+        <input type="email" class="form-control bg-light" id="exampleFormControlInput1" name="email" required placeholder="email@exemplo.com">
+      </div>
+      <div class=" mt-2">
+        <label for="exampleFormControlTextarea1" class="form-label white">Mensagem</label>
+        <textarea class="form-control bg-light" id="exampleFormControlTextarea1" rows="6" name="message"></textarea>
+      </div>
+      <button class="mt-4 botao" type="submit">Enviar!</button>
+    </form>
+    </div>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
