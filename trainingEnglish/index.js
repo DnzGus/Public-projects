@@ -92,10 +92,10 @@ function button() {
         clearbox()
     }
     else{
-            CorrectWrong(answer, correct)
-            life.innerHTML = lifes;
-            setTimeout(tryagain, 1200)
-            clearbox()
+        CorrectWrong(answer, correct)
+        life.innerHTML = lifes;
+        setTimeout(tryagain, 1200)
+        clearbox()
     }
 }
 
@@ -114,6 +114,7 @@ function CorrectWrong(answer, correct){
         word.innerHTML = "Game Over!".toUpperCase()
         lifes = 5
         wordcount = []
+        setTimeout(loadpage, 1200)
         }
     else{
         word.style.color = red;

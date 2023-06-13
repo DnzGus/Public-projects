@@ -1,95 +1,53 @@
-*{box-sizing: border-box;
-
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 body{
     background: rgb(0,105,62);
     background: radial-gradient(
         circle, rgba(0,105,62,1) 0%,
         rgba(1,135,73,1) 50%,
-        rgba(0,105,62,1) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    min-width: 100vh;
-    margin: 0;
-    overflow: hidden;
-    flex-direction: column;
-    font-family: 'Segoe UI';
+        rgba(0,105,62,1) 100%
+        );
 }
-.area{
-    background-color: rgb(28, 29, 29);
-    width: 600px;
-    max-width: 100%;
-    border-radius: 50px;
-    overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 40px;
-    position: absolute;
-    margin: auto;
+
+.columns{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 15vh 75vh 10vh;
+    place-items: center;
+    margin: 0 auto;
+    width: 90vw;
 }
-.area_UI{
-    padding: 6rem;
-}
-#button{
-    background-color: #5C5E5E;
-    color: rgb(224, 223, 220);
-    display: block;
-    width: 100%;
-    padding: 1.5rem;
-    border: none;
-    cursor: pointer;
-}
+
 #button:active{
     opacity: 0.6;
 }
-h1{
-    color: rgb(224, 223, 220);
-    letter-spacing: 0.1em;
-    text-shadow: rgb(255, 255, 255) 0px -1px 0px, rgb(46, 46, 46) 0px 1px 0px, rgb(44, 44, 44) 0px 2px 0px, rgb(42, 42, 42) 0px 3px 0px, rgb(40, 40, 40) 0px 4px 0px, rgb(38, 38, 38) 0px 5px 0px, rgb(36, 36, 36) 0px 6px 0px, rgb(34, 34, 34) 0px 7px 0px, rgb(32, 32, 32) 0px 8px 0px, rgb(30, 30, 30) 0px 9px 0px, rgb(28, 28, 28) 0px 10px 0px, rgb(26, 26, 26) 0px 11px 0px, rgb(24, 24, 24) 0px 12px 0px, rgb(22, 22, 22) 0px 13px 0px, rgb(20, 20, 20) 0px 14px 0px, rgb(18, 18, 18) 0px 15px 0px, rgba(0, 0, 0, 0.9) 0px 22px 30px;
-    --darkreader-inline-color: #d3cfca;
-    --darkreader-inline-bgimage: initial;
-    --darkreader-inline-bgcolor: #44525f;
-    margin-bottom: 36rem;
-    position: absolute;
-    font-size: 3rem;
-}
 #word{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    bottom: 2rem;
     color: rgb(224, 223, 220);
     font-size: 2rem;
+}
+.lifes{
+    color: rgb(224, 223, 220);
+    font-size: 1.2rem;
+}
+#life{
+    color: #cc0000;
 }
 .answer_box{
     background-color: #5C5E5E;
     color: rgb(224, 223, 220);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     border: hidden;
-    border-radius: 4px;
-    min-height: 2rem;
-    margin:auto;
+    border-radius: 4px; 
+    height: 2rem;
     outline: none;
+    padding: 0 5px;
 }
 ::placeholder{
     color: rgb(224, 223, 220);
-}
-.links{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    width: 10rem;
-    justify-content: space-evenly;
-    max-width: 100%;
-    bottom: 2rem;
-    color: rgb(28, 29, 29);
-    text-decoration: none;
-    text-decoration-color: rgb(28, 29, 29);
-    font-weight: bold;
 }
 a:link{
     color: rgb(28, 29, 29);
@@ -101,14 +59,190 @@ a:visited{
     text-decoration: none;
     text-decoration-color: rgb(28, 29, 29);
 }
-.wrongs{
-    text-align: center;
-    margin-left: 60rem;
-    margin-bottom: 20rem;
-    color: #cc0000;
-    background-color: rgb(28, 29, 29);
-    width: 100px;
-    max-width: 100%;
-    border-radius: 25px;
-    border: solid #5C5E5E 2px;
+
+@media (min-width: 320px){
+    
+    .columns{
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 15vh 75vh 10vh;
+        place-items: center;
+    }
+    .title{
+        color: rgb(224, 223, 220);
+        letter-spacing: 0.1em;
+        text-shadow: rgb(255, 255, 255) 0px -1px 0px, rgb(46, 46, 46) 0px 1px 0px, rgb(44, 44, 44) 0px 2px 0px, rgb(42, 42, 42) 0px 3px 0px, rgb(40, 40, 40) 0px 4px 0px, rgb(38, 38, 38) 0px 5px 0px, rgb(36, 36, 36) 0px 6px 0px, rgb(34, 34, 34) 0px 7px 0px, rgb(32, 32, 32) 0px 8px 0px, rgb(30, 30, 30) 0px 9px 0px, rgb(28, 28, 28) 0px 10px 0px, rgb(26, 26, 26) 0px 11px 0px, rgb(24, 24, 24) 0px 12px 0px, rgb(22, 22, 22) 0px 13px 0px, rgb(20, 20, 20) 0px 14px 0px, rgb(18, 18, 18) 0px 15px 0px, rgba(0, 0, 0, 0.9) 0px 22px 30px;
+        --darkreader-inline-color: #d3cfca;
+        --darkreader-inline-bgimage: initial;
+        --darkreader-inline-bgcolor: #44525f;
+        display: grid;
+        grid-column: 4/9;
+        grid-row: 1/2;
+        place-items: center;
+        min-width: 85vw;
+        }
+    .area{
+        width: 100%;
+        height: 75%;
+        display: grid;
+        grid-column: 2/11;
+        place-items: center;
+        background-color: rgb(28, 29, 29);
+        border-radius: 80px;
+        overflow: hidden;
+        grid-row: 2/3;
+        margin: 0
+    }
+    .area_UI{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    #button{
+        display: block;
+        block-size: 100%;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        background-color: #5C5E5E;
+        color: rgb(224, 223, 220);
+    }
+    .links{
+        grid-column: 4/9;
+        grid-row: 3;
+        color: rgb(28, 29, 29);
+        text-decoration: none;
+        text-decoration-color: rgb(28, 29, 29);
+        font-weight: bold;
+    }
+}
+@media (min-width: 720px){
+    
+    .columns{
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 15vh 75vh 10vh;
+        place-items: center;
+    }
+    .title{
+        color: rgb(224, 223, 220);
+        letter-spacing: 0.1em;
+        text-shadow: rgb(255, 255, 255) 0px -1px 0px, rgb(46, 46, 46) 0px 1px 0px, rgb(44, 44, 44) 0px 2px 0px, rgb(42, 42, 42) 0px 3px 0px, rgb(40, 40, 40) 0px 4px 0px, rgb(38, 38, 38) 0px 5px 0px, rgb(36, 36, 36) 0px 6px 0px, rgb(34, 34, 34) 0px 7px 0px, rgb(32, 32, 32) 0px 8px 0px, rgb(30, 30, 30) 0px 9px 0px, rgb(28, 28, 28) 0px 10px 0px, rgb(26, 26, 26) 0px 11px 0px, rgb(24, 24, 24) 0px 12px 0px, rgb(22, 22, 22) 0px 13px 0px, rgb(20, 20, 20) 0px 14px 0px, rgb(18, 18, 18) 0px 15px 0px, rgba(0, 0, 0, 0.9) 0px 22px 30px;
+        --darkreader-inline-color: #d3cfca;
+        --darkreader-inline-bgimage: initial;
+        --darkreader-inline-bgcolor: #44525f;
+        display: grid;
+        grid-column: 4/9;
+        grid-row: 1/2;
+        place-items: center;
+        min-width: 85vw;
+        }
+    .columns .area{
+        height: 75%;
+        grid-column: 5/8;
+        display: grid;
+        place-items: center;
+        background-color: rgb(28, 29, 29);
+        border-radius: 80px;
+        overflow: hidden;
+        grid-row: 2/3;
+        margin: 0
+    }
+    .area_UI{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    #button{
+        display: block;
+        block-size: 100%;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        background-color: #5C5E5E;
+        color: rgb(224, 223, 220);
+    }
+    .links{
+        grid-column: 4/9;
+        grid-row: 3;
+        color: rgb(28, 29, 29);
+        text-decoration: none;
+        text-decoration-color: rgb(28, 29, 29);
+        font-weight: bold;
+    }
+}
+@media (min-width: 2560px){
+    
+    .columns{
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 15vh 75vh 10vh;
+        place-items: center;
+    }
+    .title{
+        font-size: 5rem;
+        color: rgb(224, 223, 220);
+        letter-spacing: 0.1em;
+        text-shadow: rgb(255, 255, 255) 0px -1px 0px, rgb(46, 46, 46) 0px 1px 0px, rgb(44, 44, 44) 0px 2px 0px, rgb(42, 42, 42) 0px 3px 0px, rgb(40, 40, 40) 0px 4px 0px, rgb(38, 38, 38) 0px 5px 0px, rgb(36, 36, 36) 0px 6px 0px, rgb(34, 34, 34) 0px 7px 0px, rgb(32, 32, 32) 0px 8px 0px, rgb(30, 30, 30) 0px 9px 0px, rgb(28, 28, 28) 0px 10px 0px, rgb(26, 26, 26) 0px 11px 0px, rgb(24, 24, 24) 0px 12px 0px, rgb(22, 22, 22) 0px 13px 0px, rgb(20, 20, 20) 0px 14px 0px, rgb(18, 18, 18) 0px 15px 0px, rgba(0, 0, 0, 0.9) 0px 22px 30px;
+        --darkreader-inline-color: #d3cfca;
+        --darkreader-inline-bgimage: initial;
+        --darkreader-inline-bgcolor: #44525f;
+        display: grid;
+        grid-column: 4/9;
+        grid-row: 1/2;
+        place-items: center;
+        min-width: 85vw;
+        }
+    .columns .area{
+        width: 100%;
+        height: 75%;
+        display: grid;
+        grid-column: 5/8;
+        place-items: center;
+        background-color: rgb(28, 29, 29);
+        border-radius: 80px;
+        overflow: hidden;
+        grid-row: 2/3;
+        margin: 0;
+    }
+    .area_UI{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        padding: 5rem;
+    }
+    #button{
+        display: block;
+        block-size: 100%;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        background-color: #5C5E5E;
+        color: rgb(224, 223, 220);
+        font-size: 3rem;
+    }
+    .links{
+        grid-column: 4/9;
+        grid-row: 3;
+        color: rgb(28, 29, 29);
+        text-decoration: none;
+        text-decoration-color: rgb(28, 29, 29);
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+    .lifes{
+        font-size: 2.5rem;
+    }
+    #word{
+        font-size: 3rem;
+    }
+    .answer_box{
+        height: 4rem;
+        width: 100%;
+    }
+    ::placeholder{
+        font-size: 2rem;
+    }
 }

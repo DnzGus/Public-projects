@@ -9,25 +9,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Translate it!</h1>
-    <div class="area">
-        <div class="area_UI">
-            <h2 id="word">
-                Frase
-            </h2>
-            <input type="text" name="answer" class="answer_box" id="word_answer" placeholder="type here">
+    <div class="columns">
+        <h1 class="title">Translate it!</h1>
+        <div class="area">
+            <div class="area_UI">
+                <div class="lifes">
+                    <h3>Lifes: <span id="life">5</span></h3>
+                </div>
+                <h2 id="word">
+                    Frase
+                </h2>
+                <input type="text" name="answer" class="answer_box" id="word_answer" placeholder="type here">
+            </div>
+            <button id="button" onclick="button()">
+                Submit
+            </button>
         </div>
-        <button id="button" onclick="button()">
-            Submit
-        </button>
-    </div>
-    <div class="wrongs">
-        <h3>Lives</h3>
-        <p id="life">5</p>
-    </div>
-    <div class="links">
-        <a href="https://github.com/DnzGus" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/gustavo-diniz-653815238/" target="_blank">Linkedin</a>
+        <div class="links">
+            <a href="https://github.com/DnzGus" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/gustavo-diniz-653815238/" target="_blank">Linkedin</a>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>
