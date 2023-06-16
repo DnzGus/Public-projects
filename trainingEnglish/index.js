@@ -53,7 +53,9 @@ let life = document.getElementById("life")
 let button_html = document.getElementById("button")
 let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
+let answerH = document.getElementById("help")
 let wordcount = []
+let answerHelper = []
 let randomnum
 let words_word
 let lifes = 5
@@ -74,6 +76,7 @@ function loadpage(){
     word.removeAttribute("style")
     word.innerHTML = words_word;
     life.innerHTML = lifes
+    answerHelper = ""
     console.log(wordcount)
 }
 
@@ -87,20 +90,23 @@ function button() {
     const correct = words[randomnum].correct
     if(answer.match(correct)){
         wordcount.push(randomnum)
-        CorrectWrong(answer, correct)
+        correctWrong(answer, correct)
         setTimeout(loadpage, 1200)
         clearbox()
     }
     else{
-        CorrectWrong(answer, correct)
+        correctWrong(answer, correct)
         life.innerHTML = lifes;
         setTimeout(tryagain, 1200)
         clearbox()
     }
 }
 
+function help(){
 
-function CorrectWrong(answer, correct){
+}
+
+function correctWrong(answer, correct){
     
     const green = "#007168";
     const red = "#cc0000";
@@ -136,6 +142,9 @@ function tryagain(){
 
 function rand(){
     return  Math.floor(Math.random()* words.length)
+}
+function randC(){
+    return Math.floor(Math.random() * words[randomnum].correct.length)
 }
 
 function finish(){

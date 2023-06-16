@@ -17,12 +17,22 @@ body{
     display: grid;
     height: 100vh;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 15vh 75vh 10vh;
+    grid-template-rows: 15vh 75vh 2vh 6vh;
     place-items: center;
     margin: 0 auto;
     width: 90vw;
 }
-
+.helprow{
+    display: flex;
+    justify-content: space-between;
+    width: 85px;
+    grid-row: 3;
+    grid-column: 4/9;
+}
+#pen{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
 #button:active{
     opacity: 0.6;
 }
@@ -31,6 +41,10 @@ body{
     font-size: 2rem;
 }
 .lifes{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 2px;
     color: rgb(224, 223, 220);
     font-size: 1.2rem;
 }
@@ -64,7 +78,7 @@ a:visited{
     
     .columns{
         grid-template-columns: repeat(12,1fr);
-        grid-template-rows: 15vh 75vh 10vh;
+        grid-template-rows: 15vh 75vh 4vh 6vh;
         place-items: center;
     }
     .title{
@@ -110,18 +124,35 @@ a:visited{
     }
     .links{
         grid-column: 4/9;
-        grid-row: 3;
+        grid-row: 4;
         color: rgb(28, 29, 29);
         text-decoration: none;
         text-decoration-color: rgb(28, 29, 29);
         font-weight: bold;
+    }
+    .help{
+        color: rgb(28, 29, 29);
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: padding 0.5s;
+    }
+    .help-hover:hover{
+        position: relative;
+        padding-bottom: 5px;
+        color: rgb(224, 223, 220);
+    }
+    .help-hover:active{
+        opacity: 0.8;
     }
 }
 @media (min-width: 720px){
     
     .columns{
         grid-template-columns: repeat(12,1fr);
-        grid-template-rows: 15vh 75vh 10vh;
+        grid-template-rows: 15vh 75vh 4vh 6vh;
         place-items: center;
     }
     .title{
@@ -166,18 +197,35 @@ a:visited{
     }
     .links{
         grid-column: 4/9;
-        grid-row: 3;
+        grid-row: 4;
         color: rgb(28, 29, 29);
         text-decoration: none;
         text-decoration-color: rgb(28, 29, 29);
         font-weight: bold;
+    }
+    .help{
+        color: rgb(28, 29, 29);
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: padding 0.5s;
+    }
+    .help-hover:hover{
+        position: relative;
+        padding-bottom: 5px;
+        color: rgb(224, 223, 220);
+    }
+    .help-hover:active{
+        opacity: 0.8;
     }
 }
 @media (min-width: 2560px){
     
     .columns{
         grid-template-columns: repeat(12,1fr);
-        grid-template-rows: 15vh 75vh 10vh;
+        grid-template-rows: 15vh 75vh 4vh 6vh;
         place-items: center;
     }
     .title{
@@ -225,7 +273,7 @@ a:visited{
     }
     .links{
         grid-column: 4/9;
-        grid-row: 3;
+        grid-row: 4;
         color: rgb(28, 29, 29);
         text-decoration: none;
         text-decoration-color: rgb(28, 29, 29);
@@ -244,5 +292,22 @@ a:visited{
     }
     ::placeholder{
         font-size: 2rem;
+    }
+    .help{
+        color: rgb(28, 29, 29);
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: padding 0.5s;
+    }
+    .help-hover:hover{
+        position: relative;
+        padding-bottom: 5px;
+        color: rgb(224, 223, 220);
+    }
+    .help-hover:active{
+        opacity: 0.8;
     }
 }

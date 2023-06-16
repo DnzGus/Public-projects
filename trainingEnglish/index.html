@@ -7,6 +7,7 @@
     <meta name="author" content="Gustavo Diniz">
     <title>Training English</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a580497388.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="columns">
@@ -14,7 +15,7 @@
         <div class="area">
             <div class="area_UI">
                 <div class="lifes">
-                    <h3>Lifes: <span id="life">5</span></h3>
+                    <span class="fa-solid fa-heart" style="color: #cc0000"> <span id="life">5</span></span>
                 </div>
                 <h2 id="word">
                     Frase
@@ -24,6 +25,10 @@
             <button id="button" onclick="button()">
                 Submit
             </button>
+        </div>
+        <div class="helprow">
+        <i class="fa-solid fa-pen" id="pen"></i>
+        <button class="help help-hover" onclick="help()" id="help">Help!</button>
         </div>
         <div class="links">
             <a href="https://github.com/DnzGus" target="_blank">GitHub</a>
