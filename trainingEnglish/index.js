@@ -58,6 +58,7 @@ let wordcount = []
 let randomnum
 let words_word
 let words_correct
+let helper
 let lifes = 5
 let trys = 0
 
@@ -109,6 +110,7 @@ function help(){
     answerH.innerHTML = ""
     if(trys === 1){
         alert("Você já obteve a ajuda!")
+        answerH.innerHTML = helper
     }
     else{
         randomLetter1 = words_correct[randC()]
@@ -131,6 +133,7 @@ function help(){
                 answerH.innerHTML += "*"
             }
         }
+        helper = answerH.innerHTML
     console.log(randomIndex1)
     console.log(randomIndex2)
     trys += 1
