@@ -55,7 +55,7 @@ let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
 let answerH = document.getElementById("help")
 let life_html = document.getElementById("life_html")
-let wordcount = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+let wordcount = []
 let randomnum
 let words_word
 let words_correct
