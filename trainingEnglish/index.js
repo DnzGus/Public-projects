@@ -54,7 +54,8 @@ let button_html = document.getElementById("button")
 let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
 let answerH = document.getElementById("help")
-let wordcount = []
+let life_html = document.getElementById("life_html")
+let wordcount = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 let randomnum
 let words_word
 let words_correct
@@ -66,23 +67,24 @@ loadpage()
 
 function loadpage(){
     randomnum = rand()
-    if(wordcount.includes(randomnum) && wordcount.length <24){
-        while(wordcount.includes(randomnum)){
+    if(wordcount.length == 24){
+        return finish()
+    }
+    if(wordcount.includes(randomnum) && wordcount.length <= 24){
+        while(wordcount.includes(randomnum))
             randomnum = rand()
         }
-    }
-    if(wordcount.length >= 24){
-        finish()
-    }
-    words_correct = words[randomnum].correct
-    words_word = words[randomnum].word.toUpperCase();
-    word.removeAttribute("style")
-    word.innerHTML = words_word;
-    life.innerHTML = lifes;
-    console.log(wordcount)
-    trys = 0
-    answerH.innerHTML = "Help!"
+        word.removeAttribute("style")
+        words_word = words[randomnum].word.toUpperCase();
+        words_correct = words[randomnum].correct
+        word.innerHTML = words_word;
+        life.innerHTML = lifes;
+        console.log(wordcount)
+        trys = 0
+        answerH.innerHTML = "Help!"
 }
+
+
 
 word_answer.addEventListener("keypress",function(event){
     if(event.key ==="Enter"){
@@ -92,6 +94,7 @@ word_answer.addEventListener("keypress",function(event){
 function button() {
     const answer = document.querySelector("#word_answer").value.toLowerCase();
     const correct = words[randomnum].correct
+
     if(answer.match(correct)){
         wordcount.push(randomnum)
         correctWrong(answer, correct)
@@ -141,10 +144,8 @@ function help(){
 }
 
 function correctWrong(answer, correct){
-    
     const green = "#007168";
     const red = "#cc0000";
-    
     if(answer.match(correct)){
         word.style.color = green;
         word.innerHTML = correct.toUpperCase() +"!"
@@ -182,7 +183,9 @@ function randC(){
 }
 
 function finish(){
-    words_word = `Parabéns, você concluiu todas as frases.`
+    word.innerHTML = `Parabéns, você concluiu todas as frases!`
+    word.removeAttribute(`style`)
     word_answer.remove();
     button_html.remove();
+    life_html.remove();
 }
