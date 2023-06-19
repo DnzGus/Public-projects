@@ -55,10 +55,11 @@ let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
 let answerH = document.getElementById("help")
 let wordcount = []
-let answerHelper = []
 let randomnum
 let words_word
+let words_correct
 let lifes = 5
+let trys = 0
 
 loadpage()
 
@@ -72,12 +73,14 @@ function loadpage(){
     if(wordcount.length >= 24){
         finish()
     }
+    words_correct = words[randomnum].correct
     words_word = words[randomnum].word.toUpperCase();
     word.removeAttribute("style")
     word.innerHTML = words_word;
-    life.innerHTML = lifes
-    answerHelper = ""
+    life.innerHTML = lifes;
     console.log(wordcount)
+    trys = 0
+    answerH.innerHTML = "Help!"
 }
 
 word_answer.addEventListener("keypress",function(event){
@@ -103,7 +106,35 @@ function button() {
 }
 
 function help(){
-
+    answerH.innerHTML = ""
+    if(trys === 1){
+        alert("Você já obteve a ajuda!")
+    }
+    else{
+        randomLetter1 = words_correct[randC()]
+        randomLetter2 = words_correct[randC()]
+        if(randomLetter1 === randomLetter2){
+            while(randomLetter1 === randomLetter2){
+                randomLetter2 = words_correct[randC()]
+            }
+        }
+        randomIndex1 = words_correct.indexOf(randomLetter1)
+        randomIndex2 = words_correct.indexOf(randomLetter2)
+        for(let i = 0; i < words_correct.length; i++){
+            if(i === randomIndex1){
+                answerH.innerHTML += randomLetter1
+            }
+            else if(i === randomIndex2){
+                answerH.innerHTML += randomLetter2
+            }
+            else{
+                answerH.innerHTML += "*"
+            }
+        }
+    console.log(randomIndex1)
+    console.log(randomIndex2)
+    trys += 1
+    }
 }
 
 function correctWrong(answer, correct){
