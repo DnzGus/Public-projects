@@ -320,7 +320,7 @@ function randC(){
 function finish(){
     word.innerHTML = `Parabéns, você concluiu todas as frases!`
     word.removeAttribute(`style`)
-    word_answer.remove();
-    button_html.remove();
-    life_html.remove();
+    word_answer.style.visibility = "hidden";
+    button_html.style.visibility = "hidden";
+    life_html.style.visibility = "hidden";
 }
