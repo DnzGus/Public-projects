@@ -1,56 +1,10 @@
-const words = [
-    p1={word: "Book",
-    correct : "livro"},
-    p2={word: "Car",
-    correct : "carro"},
-    p3={word: "Cat", 
-    correct : "gato"},
-    p4={word: "Chair", 
-    correct : "cadeira"},
-    p5={word: "Computer",
-    correct : "computador"},
-    p6={word: "Desk",
-    correct : "escrivaninha"},
-    p7={word: "Door",
-    correct : "porta"},
-    p8={word: "Floor",
-    correct : "chão"},
-    p9={word: "House", 
-    correct : "casa"},
-    p10={word: "Key",
-    correct : "chave"},
-    p11={word: "Laptop",
-    correct : "laptop"},
-    p12={word: "Light",
-    correct : "luz"},
-    p13={word: "Monitor",
-    correct : "monitor"},
-    p14={word: "Mouse",
-    correct : "rato"},
-    p15={word: "Sofa",
-    correct : "sofá"},
-    p16={word: "Table",
-    correct : "mesa"},
-    p17={word: "Afternoon",
-    correct : "tarde"},
-    p18={word: "Age",
-    correct : "idade"},
-    p19={word: "Beauty",
-    correct : "beleza"},
-    p20={word: "Bed",
-    correct : "cama"},
-    p21={word: "Beginning",
-    correct : "começo"},
-    p22={word: "Bicycle",
-    correct : "bicicleta"},
-    p23={word: "Birthday",
-    correct : "aniversário"},
-    p24={word: "Body",
-    correct : "corpo",}
-]
-
+let words
 let life = document.getElementById("life")
 let button_html = document.getElementById("button")
+let buttonEasy = document.getElementById("buttonEasy")
+let buttonMedium = document.getElementById("buttonMedium")
+let buttonHard = document.getElementById("buttonHard")
+let buttonsAll = document.getElementsByClassName("dif_button")
 let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
 let answerH = document.getElementById("help")
@@ -63,11 +17,192 @@ let helper
 let lifes = 5
 let trys = 0
 
-loadpage()
+function easy(){
+    words = [
+        p1={word: "car",
+        correct : "carro"},
+        p2={word: "house",
+        correct : "casa"},
+        p3={word: "cat",
+        correct : "gato"},
+        p4={word: "apple",
+        correct : "maçã"},
+        p5={word: "Book",
+        correct : "livro"},
+        p6={word: "table",
+        correct : "mesa"},
+        p7={word: "computer",
+        correct : "computador"},
+        p8={word: "high",
+        correct : "alto"},
+        p9={word: "low",
+        correct : "baixo"},
+        p10={word: "door",
+        correct : "porta"},
+        p11={word: "flower",
+        correct : "flor"},
+        p12={word: "head",
+        correct : "cabeça"},
+    ]
+    buttonEasy.style.color = "#0080ff"
+    buttonEasy.style.backgroundColor = "rgb(224, 223, 220)"
+    buttonMedium.removeAttribute("style")
+    buttonHard.removeAttribute("style")
+    word_answer.style.visibility = "visible"
+    button_html.style.visibility = "visible"
+    life_html.style.visibility = "visible"
+    loadpage()
+}
+function medium(){
+    words = [
+        p1={word: "dinner",
+        correct : "janta"||"jantar"},
+        p2={word: "lunch",
+        correct : "almoço"},
+        p3={word: "breakfast",
+        correct : "café da manhã"},
+        p4={word: "straight",
+        correct : "reto"},
+        p5={word: "left",
+        correct : "esquerda"},
+        p6={word: "right",
+        correct : "direita"},
+        p7={word: "garden",
+        correct : "jardim"},
+        p8={word: "plane",
+        correct : "avião"},
+        p9={word: "college",
+        correct : "faculdade"},
+        p10={word: "costume",
+        correct : "fantasia"},
+        p11={word: "medicine",
+        correct : "remédio"},
+        p12={word: "hotel",
+        correct : "hotel"},
+        p13={word: "animal",
+        correct : "animal"},
+        p14={word: "material",
+        correct : "material"},
+        p15={word: "jewelry",
+        correct : "jóia"||"jóias"},
+        p16={word: "object",
+        correct : "objeto"},
+        p17={word: "regular",
+        correct : "regular"},
+        p18={word: "simple",
+        correct : "simples"},
+        p19={word: "video",
+        correct : "vídeo"},
+        p20={word: "meat",
+        correct : "carne"},
+        p21={word: "pineapple",
+        correct : "abacaxi"},
+        p22={word: "casualty",
+        correct : "fatalidade"||"morte"},
+        p23={word: "grandmother",
+        correct : "vó"},
+        p24={word: "cousin",
+        correct : "primo"},
+    ]
+    buttonMedium.style.color = "#0080ff"
+    buttonMedium.style.backgroundColor = "rgb(224, 223, 220)"
+    buttonEasy.removeAttribute("style")
+    buttonHard.removeAttribute("style")
+    word_answer.style.visibility = "visible"
+    button_html.style.visibility = "visible"
+    life_html.style.visibility = "visible"
+    button_html.style.visibility = "visible"
+    loadpage()
+}
+function hard(){
+    words = [
+        p1={word: "squirrel",
+        correct : "esquilo"},
+        p2={word: "race",
+        correct : "raça"||"corrida"},
+        p3={word: "watermelon",
+        correct : "melancia"},
+        p4={word: "application",
+        correct : "inscrição"},
+        p5={word: "anthem",
+        correct : "hino"},
+        p6={word: "fabric",
+        correct : "tecido"},
+        p7={word: "parents",
+        correct : "pais"},
+        p8={word: "record",
+        correct : "gravar"},
+        p9={word: "pretend",
+        correct : "fingir"},
+        p10={word: "spyglass",
+        correct : "luneta"||"binóculo"},
+        p11={word: "understood",
+        correct : "entendido"},
+        p12={word: "comics",
+        correct : "revista em quadrinhos"||"gibi"},
+        p13={word: "prejudice",
+        correct : "preconceito"},
+        p14={word: "push",
+        correct : "empurrar"},
+        p15={word: "cargo plane",
+        correct : "avião de carga"},
+        p16={word: "barrack",
+        correct : "quartel"},
+        p17={word: "cargoship",
+        correct : "cargueiro"||"navio de carga"},
+        p18={word: "graduate program",
+        correct : "programa de graduação"},
+        p19={word: "tent",
+        correct : "tenda"||"barraca"},
+        p20={word: "compliment",
+        correct : "elogio"},
+        p21={word: "brazilian nuts",
+        correct : "castanha de cajú"},
+        p22={word: "watter bottle",
+        correct : "garrafa de água"},
+        p23={word: "dessert",
+        correct : "sobremesa"},
+        p24={word: "dishes",
+        correct : "louças"||"louça"},
+        p25={word: "customs",
+        correct : "alfândega"||"aduaneiro"||"aduaneira"},
+        p26={word: "nonplussed",
+        correct : "perplexo"},
+        p27={word: "moisturizer",
+        correct : "hidratante"},
+        p28={word: "overwhelmed",
+        correct : "sobrecarregado"},
+        p29={word: "wheelchair",
+        correct : "cadeira de rodas"},
+        p30={word: "environmental reserve",
+        correct : "reserva ambiental"},
+        p31={word: "unconstitutionally",
+        correct : "inconstitucionalmente"},
+        p32={word: "deconstitutionalize",
+        correct : "desconstitucionalizar"},
+        p33={word: "Disproportionately",
+        correct : "desproporcionalmente"},
+        p34={word: "trapdoor",
+        correct : "alçapão"},
+        p35={word: "guitar",
+        correct : "violão"},
+        p36={word: "stork",
+        correct : "cegonha"},
+    ]
+    buttonHard.style.color = "#0080ff"
+    buttonHard.style.backgroundColor = "rgb(224, 223, 220)"
+    buttonEasy.removeAttribute("style")
+    buttonMedium.removeAttribute("style")
+    word_answer.style.visibility = "visible"
+    button_html.style.visibility = "visible"
+    life_html.style.visibility = "visible"
+    button_html.style.visibility = "visible"
+    loadpage()
+}
 
 function loadpage(){
     randomnum = rand()
-    if(wordcount.length == 24){
+    if(wordcount.length == words.length){
         return finish()
     }
     if(wordcount.includes(randomnum) && wordcount.length <= 24){
@@ -148,7 +283,7 @@ function correctWrong(answer, correct){
     const red = "#cc0000";
     if(answer.match(correct)){
         word.style.color = green;
-        word.innerHTML = correct.toUpperCase() +"!"
+        word.innerHTML = answer.toUpperCase() +"!"
     }
     else if(lifes <= 1){
         word.style.color = red
