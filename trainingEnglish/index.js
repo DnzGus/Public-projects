@@ -51,6 +51,7 @@ function easy(){
     word_answer.style.visibility = "visible"
     button_html.style.visibility = "visible"
     life_html.style.visibility = "visible"
+    lifes = 5
     loadpage()
 }
 function medium(){
@@ -112,6 +113,7 @@ function medium(){
     button_html.style.visibility = "visible"
     life_html.style.visibility = "visible"
     button_html.style.visibility = "visible"
+    lifes = 5
     loadpage()
 }
 function hard(){
@@ -197,6 +199,7 @@ function hard(){
     button_html.style.visibility = "visible"
     life_html.style.visibility = "visible"
     button_html.style.visibility = "visible"
+    lifes = 5
     loadpage()
 }
 
