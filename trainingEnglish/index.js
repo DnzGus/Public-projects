@@ -7,7 +7,7 @@ let buttonHard = document.getElementById("buttonHard")
 let buttonsAll = document.getElementsByClassName("dif_button")
 let word_answer = document.getElementById("word_answer")
 let word = document.getElementById("word")
-let answerH = document.getElementById("help")
+let helperAnswer = document.getElementById("help")
 let life_html = document.getElementById("life_html")
 let wordcount = []
 let randomnum
@@ -15,7 +15,7 @@ let words_word
 let words_correct
 let helper
 let lifes = 5
-let trys = 0
+let getHelp = 0
 
 function easy(){
     words = [
@@ -48,10 +48,8 @@ function easy(){
     buttonEasy.style.backgroundColor = "rgb(224, 223, 220)"
     buttonMedium.removeAttribute("style")
     buttonHard.removeAttribute("style")
-    word_answer.style.visibility = "visible"
-    button_html.style.visibility = "visible"
-    life_html.style.visibility = "visible"
-    lifes = 5
+    NewGame()
+    resetLife()
     loadpage()
 }
 function medium(){
@@ -109,11 +107,8 @@ function medium(){
     buttonMedium.style.backgroundColor = "rgb(224, 223, 220)"
     buttonEasy.removeAttribute("style")
     buttonHard.removeAttribute("style")
-    word_answer.style.visibility = "visible"
-    button_html.style.visibility = "visible"
-    life_html.style.visibility = "visible"
-    button_html.style.visibility = "visible"
-    lifes = 5
+    NewGame()
+    resetLife()
     loadpage()
 }
 function hard(){
@@ -195,11 +190,8 @@ function hard(){
     buttonHard.style.backgroundColor = "rgb(224, 223, 220)"
     buttonEasy.removeAttribute("style")
     buttonMedium.removeAttribute("style")
-    word_answer.style.visibility = "visible"
-    button_html.style.visibility = "visible"
-    life_html.style.visibility = "visible"
-    button_html.style.visibility = "visible"
-    lifes = 5
+    NewGame()
+    resetLife()
     loadpage()
 }
 
@@ -218,8 +210,8 @@ function loadpage(){
         word.innerHTML = words_word;
         life.innerHTML = lifes;
         console.log(wordcount)
-        trys = 0
-        answerH.innerHTML = "Help!"
+        getHelp = 0
+        helperAnswer.innerHTML = "Help!"
 }
 
 
@@ -248,10 +240,10 @@ function button() {
 }
 
 function help(){
-    answerH.innerHTML = ""
-    if(trys === 1){
+    helperAnswer.innerHTML = ""
+    if(getHelp === 1){
         alert("Você já obteve a ajuda!")
-        answerH.innerHTML = helper
+        helperAnswer.innerHTML = helper
     }
     else{
         randomLetter1 = words_correct[randC()]
@@ -265,19 +257,19 @@ function help(){
         randomIndex2 = words_correct.indexOf(randomLetter2)
         for(let i = 0; i < words_correct.length; i++){
             if(i === randomIndex1){
-                answerH.innerHTML += randomLetter1
+                helperAnswer.innerHTML += randomLetter1
             }
             else if(i === randomIndex2){
-                answerH.innerHTML += randomLetter2
+                helperAnswer.innerHTML += randomLetter2
             }
             else{
-                answerH.innerHTML += "*"
+                helperAnswer.innerHTML += "*"
             }
         }
-        helper = answerH.innerHTML
+        helper = helperAnswer.innerHTML
     console.log(randomIndex1)
     console.log(randomIndex2)
-    trys += 1
+    getHelp += 1
     }
 }
 
@@ -326,4 +318,14 @@ function finish(){
     word_answer.style.visibility = "hidden";
     button_html.style.visibility = "hidden";
     life_html.style.visibility = "hidden";
+}
+const resetLife = () => {
+    if (lifes != 5){
+        lifes = 5
+    }
+}
+const NewGame = () => {
+    word_answer.style.visibility = "visible"
+    button_html.style.visibility = "visible"
+    life_html.style.visibility = "visible"
 }
