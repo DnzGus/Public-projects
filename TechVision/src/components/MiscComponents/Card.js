@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Card = ({ title, alt, path, img }) => {
     return (
         <>
-        <div className='w-64 ease-in transform hover:scale-110 transition duration-300 m-2'>
+        <div className='w-64 ease-in transform hover:scale-110 transition duration-300 m-3'>
             <Link to={path}>
                 <div className='flex text-center justify-center items-center rounded-2xl h-48 overflow-hidden'>
                 <img src={img} alt={alt} className='blur-sm h-48'/>

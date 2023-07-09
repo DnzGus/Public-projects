@@ -9,8 +9,11 @@ import {
 } from "react-router-dom";
 
 import Home from './components/HomeComponents/Home';
-import LearnMore from './components/LearnMore/LearnMore'
+import AboutUs from './components/AboutUs/AboutUsPage'
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import Software from './components/Services/Software';
+import Consultoria from './components/Services/Consultoria';
+import Cloud from './components/Services/Cloud';
 
 const router = createBrowserRouter([
   {
@@ -23,9 +26,21 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "LearnMore",
-        element: <LearnMore />
-      }
+        path: "AboutUs",
+        element: <AboutUs />
+      },
+      {
+        path: "Software",
+        element: <Software />
+      },
+      {
+        path: "Consultoria",
+        element: <Consultoria />
+      },
+      {
+        path: "Cloud",
+        element: <Cloud />
+      },
     ]
   },
 ])
