@@ -4,7 +4,7 @@ import Company from "../IMGS/Company.jpg"
 import Softwareimg from '../IMGS/SoftwareIMG.jpg'
 import Consultoria from '../IMGS/Consultoria.jpg'
 import Cloud from '../IMGS/Cloud.jpg'
-import WorkWUs from '../MiscComponents/WorkFormAnimated'
+import Questions from '../Questions/Questions'
 import ToyotaLogo from '../IMGS/ToyotaLogo.png'
 import KabumLogo from '../IMGS/KabumLogo.png'
 import DisneyLogo from '../IMGS/DisneyLogo.png'
@@ -39,16 +39,16 @@ const Home = () => {
                 </p>
             </article>
             <div className="flex mt-1 flex-col justify-center" title="Servicos" id="Servicos" subtitle="Servicos">
-                <h3 className="p-2 font-semibold text-xl text-center bg-sky-950 text-white border-2 border-cyan-800 mb-1">Serviços</h3>
+                <h3 className="p-2 font-semibold text-xl text-center bg-sky-950 text-yellow-300 border-2 border-cyan-800 mb-1">Serviços</h3>
                 <div className="p-5 flex flex-row flex-wrap justify-evenly ">
                     <Card title={"Desenvolvimento de Software"} path={"Software"} img={Softwareimg} alt={"Software Dev."}/>
                     <Card title={"Consultoria em TI"} path={"Consultoria"} img={Consultoria} alt={"Uma imagem ilustrativa de consultoria."}/>
-                    <Card title={"Soluções em Nuvem"} path={"Cloud"} img={Cloud} alt={"Tech Cloud."}/>
+                    <Card title={"Soluções em Nuvem"} path={"Cloud"} img={Cloud} alt={"Tech Cloud."} subtitle={"Cloud"}/>
                 </div>
             </div>
-            <div className="flex justify-center flex-col w-100 bg-sky-600 border-2 border-cyan-800 bg-opacity-50 mb-2">
-                <h3 className="font-semibold text-xl text-center bg-sky-950 text-yellow-300 border-b-2 border-cyan-800 mb-1">Empresas parceiras</h3>
-                <div className="flex justify-evenly items-center flex-row p-5 h-10">
+            <div className="flex justify-evenly flex-col w-100 bg-sky-600 border-2 border-cyan-800 bg-opacity-50 mb-2">
+                <h3 className="font-semibold text-xl text-center bg-sky-950 text-yellow-300 border-b-2 border-cyan-800">Empresas parceiras</h3>
+                <div className="flex flex-wrap justify-evenly items-center flex-row p-2">
                     <img src={ToyotaLogo} alt="Logo da Toyota" className="w-16" />
                     <img src={KabumLogo} alt="Logo da Kabum" className="w-16" />
                     <img src={DisneyLogo} alt="Logo da Disney" className="w-16" />
@@ -62,7 +62,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="bg-sky-950 p-10 flex justify-center items-center border-t-2 border-cyan-800">
-                <WorkWUs />
+                <Questions />
             </div>
         </main>
     )

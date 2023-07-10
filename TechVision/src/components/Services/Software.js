@@ -1,8 +1,8 @@
 const Software = () => {
     return (
-        <div className="text-center flex items-center h-full flex-col text-white">
+        <main className="text-center justify-evenly flex items-center min-h-screen flex-col text-white">
             <h2 className="text-3xl font-extrabold p-2">Desenvolvimento de Software</h2>
-            <div className="flex flex-col justify-start gap-2 p-4">
+            <div className="flex flex-col justify-start p-4">
                 <h3 className="font-semibold text-yellow-300">Planejamento e Análise</h3>
                 <p className="text-start">O desenvolvimento de software começa com o planejamento e análise dos requisitos do cliente.
                 Nessa fase, são identificadas as necessidades, objetivos e funcionalidades desejadas. Os desenvolvedores trabalham em estreita colaboração com os clientes para entender seus requisitos e definir o escopo do projeto.</p>
@@ -19,9 +19,12 @@ const Software = () => {
                 <p className="text-start">Uma vez que o software tenha sido testado e aprovado, ele é implantado no ambiente de produção. 
                 Os desenvolvedores monitoram seu desempenho e realizam manutenção contínua, corrigindo erros, atualizando recursos e garantindo a segurança do software ao longo do tempo.</p>
             </div>
-            <button className="flex justify-center w-60 items-center border-2 text-xl border-yellow-300 bg-sky-600 rounded-full p-4
-            hover:scale-105">Contratar serviço!</button>
-        </div>
+            <p className="text-xs text-yellow-300">Não trabalhamos com pacotes, todos os serviços são completos!</p>
+            <div className="p-2">
+                <button className="flex justify-center w-60 items-center border-2 text-xl border-yellow-300 bg-sky-600 rounded-full p-4
+                hover:scale-105 transition">Contratar serviço!</button>
+            </div>
+        </main>
     )
 }
 

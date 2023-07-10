@@ -3,7 +3,7 @@ import React from "react"
 const LearnMore = () => {
     return (
         <main>
-            <div className="mb-1 h-screen text-white p-2 flex flex-col justify-evenly flex-wrap bg-sky-950 border-2 border-cyan-800">
+            <div className="mb-1 min-h-screen text-white p-2 flex flex-col justify-evenly flex-wrap bg-sky-950 border-2 border-cyan-800">
                 <h1 className="font-semibold text-xl p-2 text-yellow-300">Sobre Nós:</h1>
                 <p className="mt-2 mb-2">
                 A TechVision é uma empresa líder em soluções tecnológicas inovadoras, dedicada a ajudar empresas de todos os setores a prosperarem no mundo digital. 

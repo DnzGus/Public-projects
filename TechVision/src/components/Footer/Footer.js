@@ -4,7 +4,7 @@ import Linkedin from '../IMGS/Linkedin.png'
 
 const Footer = () => {
     return (
-        <footer className='sticky bottom-0 bg-sky-950 p-2 flex items-center justify-between flex-wrap m-0 text-yellow-300'>
+        <footer className=' bottom-0 bg-sky-950 p-2 flex items-center justify-between flex-wrap m-0 text-yellow-300'>
             <div className='flex flex-row items-center align-middle gap-2'>
                 <p>Nossas redes sociais:</p>
                 <div className='flex justify-evenly gap-1'>

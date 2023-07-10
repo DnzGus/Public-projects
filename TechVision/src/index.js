@@ -14,6 +14,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import Software from './components/Services/Software';
 import Consultoria from './components/Services/Consultoria';
 import Cloud from './components/Services/Cloud';
+import QPage from './components/Questions/QuestionsPage';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "Cloud",
         element: <Cloud />
+      },
+      {
+        path: "QPage",
+        element: <QPage />,
       },
     ]
   },
