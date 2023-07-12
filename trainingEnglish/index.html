@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Gustavo Diniz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Gustavo Diniz" />
     <title>Training English</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a580497388.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a580497388.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="columns">
-        <h1 class="title">Translate it!</h1>
-        <div class="area">
-            <div class="area_UI">
-                <div class="lifes" id="life_html">
-                    <span class="fa-solid fa-heart" style="color: #cc0000"> <span id="life">5</span></span>
-                </div>
-                <h2 id="word">
-                    Selecione a dificuldade que deseja nos botões abaixo
-                </h2>
-                <input type="text" name="answer" class="answer_box" id="word_answer" placeholder="type here">
-            </div>
-            <button id="button" onclick="button()">
-                Submit
-            </button>
+      <h1 class="title">Translate it!</h1>
+      <div class="area">
+        <div class="area_UI">
+          <div class="lifes" id="life_html">
+            <span class="fa-solid fa-heart" style="color: #cc0000">
+              <span id="life">5</span></span
+            >
+          </div>
+          <h2 id="word">
+            Selecione a dificuldade que deseja nos botões abaixo
+          </h2>
+          <input
+            type="text"
+            name="answer"
+            class="answer_box"
+            id="word_answer"
+            placeholder="type here"
+          />
         </div>
-        <div class="helprow">
+        <button id="button" onclick="button()">Submit</button>
+      </div>
+      <div class="helprow">
         <i class="fa-solid fa-pen" id="pen"></i>
-        <button class="help help-hover" onclick="help()" id="help">Help!</button>
+        <button class="help help-hover" onclick="help()" id="help">
+          Help!
+        </button>
+      </div>
+      <div class="links">
+        <a href="https://github.com/DnzGus" target="_blank">GitHub</a>
+        <a
+          href="https://www.linkedin.com/in/gustavo-diniz-653815238/"
+          target="_blank"
+          >Linkedin</a
+        >
+      </div>
+      <div class="difficulty">
+        <div class="dif_area">
+          <button class="dif_button" id="buttonEasy" onclick="easy()">
+            Easy
+          </button>
+          <button class="dif_button" id="buttonMedium" onclick="medium()">
+            Medium
+          </button>
+          <button class="dif_button" id="buttonHard" onclick="hard()">
+            Hard
+          </button>
         </div>
-        <div class="links">
-            <a href="https://github.com/DnzGus" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/gustavo-diniz-653815238/" target="_blank">Linkedin</a>
-        </div>
-        <div class="difficulty">
-            <div class="dif_area">
-                <button class="dif_button" id="buttonEasy" onclick="easy()">Easy</button>
-                <button class="dif_button" id="buttonMedium" onclick="medium()">Medium</button>
-                <button class="dif_button" id="buttonHard" onclick="hard()">Hard</button>
-            </div>
-        </div>
+      </div>
     </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
